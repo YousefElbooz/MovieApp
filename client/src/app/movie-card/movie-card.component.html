@@ -1,0 +1,18 @@
+<div class="movie-card">
+  <div class="poster-container">
+    <img [src]="getImageUrl(movie.poster_path)" [alt]="movie.title" />
+    <div class="rating-circle" [style.--rating]="movie.vote_average">
+      <span>{{ movie.vote_average }}<sup>%</sup></span>
+    </div>
+    <button 
+      class="like-button"
+      (click)="toggleLike($event)"
+      [class.liked]="likedMovies.has(movie._id!)"
+    >
+      {{ likedMovies.has(movie._id!) ? '💛' : '🤍' }}
+    </button>
+  </div>
+
+  <h4>{{ movie.title }}</h4>
+  <p>{{ movie.release_date | date: 'MMM dd, yyyy' }}</p>
+</div>

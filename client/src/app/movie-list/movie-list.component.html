@@ -1,0 +1,9 @@
+<div class="movies-grid">
+  <app-movie-card
+    *ngFor="let movie of movies"
+    [movie]="movie"
+    [likedMovies]="likedMovies"
+    [getImageUrl]="getImageUrl"
+    [onToggleLike]="onToggleLike"
+  ></app-movie-card>
+</div>

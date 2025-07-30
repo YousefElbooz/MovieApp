@@ -1,0 +1,97 @@
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.movie-card {
+  background: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px #00000050;
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.poster-wrapper {
+  position: relative;
+}
+
+.poster-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rating-circle {
+  position: absolute;
+  bottom: -12px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background: #111;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.circle-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotate(-90deg);
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #333;
+  stroke-width: 4;
+}
+
+.circle-progress {
+  fill: none;
+  stroke: #00ff90;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.rating-text {
+  color: white;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.movie-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 16px;
+  margin: 0;
+}
+
+.date {
+  color: #aaa;
+  font-size: 13px;
+  margin: 4px 0 8px;
+}
+
+.like-btn {
+  background: transparent;
+  border: none;
+  color: gold;
+  font-size: 20px;
+  cursor: pointer;
+}

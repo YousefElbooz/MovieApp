@@ -1,0 +1,52 @@
+.nav-bar{
+    background-color: rgb(230, 206, 25);
+    margin: 0;
+    padding: 12px 0px 12px 8px;
+}
+.title{
+    font-weight: bold;
+    font-size: large;
+    padding-top: 7px;
+    display: inline;
+    text-decoration: none;
+    color: #000;
+}
+.title:hover{
+    color: gray;
+}
+.nav-bar-items{
+      display: flex;
+  align-items: center;
+}
+.watchlist-link{
+    text-decoration: none;
+    color: black;
+}
+.watchlist-link:hover{
+    color: red;
+}
+.Watchlist-word{
+    padding: 0px 9px;
+}
+.activeLink{
+    color: red;
+}
+.search-link{
+    text-decoration: none;
+    color: #000;
+}
+.search-link:hover{
+    color: gray;
+}
+.active-link{
+    color: gray;
+}
+.logoutbtn{
+        color: gray;
+        border: none;
+        background: transparent;
+        color: #000;
+}
+.logoutbtn:hover{
+    color: red;
+}

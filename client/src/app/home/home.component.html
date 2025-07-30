@@ -1,0 +1,21 @@
+<app-search-component (dataEmitter)="onSearch($event)"></app-search-component>
+
+<app-movie-list
+  [movies]="filteredMovies"
+  [likedMovies]="likedMovies"
+  [getImageUrl]="getImageUrl"
+  [onToggleLike]="onToggleLike.bind(this)"
+></app-movie-list>
+
+<div class="pagination">
+  <button (click)="prevPages()" [disabled]="pageWindowStart === 1">‹</button>
+
+  <button
+    *ngFor="let page of getPageNumbers()"
+    [class.active]="page === currentPage"
+    (click)="goToPage(page)">
+    {{ page }}
+  </button>
+
+  <button (click)="nextPages()" [disabled]="pageWindowStart + pageWindowSize > totalPages">›</button>
+</div>

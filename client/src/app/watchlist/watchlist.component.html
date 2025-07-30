@@ -1,0 +1,31 @@
+<div class="movies-grid" *ngIf="watchlist.length > 0; else empty">
+  <div class="movie-card" *ngFor="let movie of watchlist">
+    <div class="poster-wrapper">
+      <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" class="poster-img" />
+      <div class="rating-circle">
+        <svg class="circle-svg">
+          <circle class="circle-bg" cx="20" cy="20" r="18" />
+          <circle
+            class="circle-progress"
+            [attr.stroke-dasharray]="113"
+            [attr.stroke-dashoffset]="113 - (movie.vote_average * 10 * 113) / 100"
+            cx="20"
+            cy="20"
+            r="18"
+          />
+        </svg>
+        <span class="rating-text">{{ movie.vote_average | number: '1.0-0' }}<sup>%</sup></span>
+      </div>
+    </div>
+
+    <div class="movie-info">
+      <h3 class="title">{{ movie.title }}</h3>
+      <p class="date">{{ movie.release_date | date: 'MMM dd, yyyy' }}</p>
+      <button class="like-btn" (click)="removeFromWatchlist(movie._id)">💖</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #empty>
+  <p style="color: white; text-align: center;">Your watchlist is empty 😢</p>
+</ng-template>

@@ -1,0 +1,39 @@
+<nav class="navbar bg-body-tertiary px-3" class="nav-bar">
+  <div class="container-fluid d-flex justify-content-between align-items-center w-100">
+    <a routerLink="" class="title">
+      <h5  >Movie App</h5>
+    </a>
+    <div class="d-flex align-items-center gap-4">
+      <div>
+        <a routerLinkActive="active-link" class="search-link" href="#">Search</a>
+      </div>
+
+     <div>
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item dropdown">
+            <button class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              En
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item">Ar</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="d-flex align-items-center">
+        <a class="watchlist-link" routerLink="watchlist" routerLinkActive="activeLink" >
+          <svg xmlns="http://www.w3.org/2000/svg"
+           width="16" height="16" fill="currentColor"
+            class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                 d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+            </svg>
+            <span class="Watchlist-word">Watchlist</span>
+        </a>
+      </div>
+      <button class="logoutbtn"  *ngIf="authService.isLoggedIn()" (click)="onLogout()">Logout</button>
+    </div>
+  </div>
+</nav>
